@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>👑 IMMORTAL GEN 👑</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #000000, #2c2c2c);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .cursor {
+      width: 12px;
+      height: 12px;
+      background: #b347ff;
+      border-radius: 50%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: screen;
+      box-shadow: 0 0 12px #b347ff, 0 0 24px #b347ff;
+      transition: transform 0.05s ease;
+    }
+
+    /* Removed snowflake styles */
+
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      animation: glow 2s infinite alternate;
+      letter-spacing: 2px;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5); }
+      to { text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ffff00; }
+    }
+
+    .discord-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(114, 137, 218, 0.8);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(114, 137, 218, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .discord-btn:hover {
+      transform: scale(1.1);
+      background: rgba(114, 137, 218, 1);
+      box-shadow: 0 0 30px rgba(114, 137, 218, 0.8);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .intro-box {
+      background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(10, 10, 10, 0.95));
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+      max-width: 800px;
+    }
+
+    .intro-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .intro-box p {
+      color: #aaa;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      background: linear-gradient(145deg, rgba(40, 40, 40, 0.8), rgba(20, 20, 20, 0.9));
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+
+    .section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 0, 255, 0.3);
+      border-color: rgba(0, 255, 255, 0.3);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-desc {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .logo { font-size: 2.5rem; }
+      .intro-box h2 { font-size: 1.5rem; }
+      .section-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <header>
+    <h1 class="logo">👑 IMMORTAL GEN 👑</h1>
+  </header>
+
+  <main>
+    <div class="intro-box" id="introBox">
+      <h2>ULTRA FAST GENS ⚡</h2>
+      <p>The fastest, most premium generators on the market. Get instant access to exclusive tools with zero delays. Built for speed, designed for kings. 👑</p>
+    </div>
+
+    <section class="section" id="beamingGen">
+      <h2 class="section-title"><i class="fas fa-bolt"></i> BEAMING GEN ⚡</h2>
+      <p class="section-desc">Ultra-fast generation with zero cooldowns. Instant results, premium quality.</p>
+    </section>
+
+    <section class="section" id="autoHar">
+      <h2 class="section-title"><i class="fas fa-robot"></i> AUTO HAR 🤖</h2>
+      <p class="section-desc">Fully automated tools for maximum efficiency. Set it and forget it.</p>
+    </section>
+  </main>
+
+  <button class="discord-btn" id="discordBtn">
+    <i class="fab fa-discord"></i> JOIN DISCORD
+  </button>
+
+  <script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Removed snowflake creation code
+
+    window.addEventListener('scroll', () => {
+      const introBox = document.getElementById('introBox');
+      if (window.scrollY > 100) {
+        introBox.classList.add('show');
+      }
+    });
+
+    document.getElementById('beamingGen').addEventListener('click', () => {
+      window.open('https://spoo.me/Dripzi', '_blank');
+    });
+
+    document.getElementById('autoHar').addEventListener('click', () => {
+      window.open('https://bloxtools.space/generator/Immortal/', '_blank');
+    });
+
+    document.getElementById('discordBtn').addEventListener('click', () => {
+      window.open('https://discord.gg/kQydU48nMw', '_blank');
+    });
+  </script>
+</body>
+</html>
